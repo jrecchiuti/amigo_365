@@ -1,0 +1,47 @@
+
+body
+{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+}
+h1
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 502px;
+    margin-left: 20px;
+    background: blue;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 0px;
+
+}
+#Formulario
+{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(61, 61, 63);
+    background: rgb(199, 191, 191);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+#Formulario label
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 400px;
+    margin: 5px;
+}
+.envia
+{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
