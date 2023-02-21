@@ -1,0 +1,22 @@
+{
+  "name": "paractico_javascrip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "prueba.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrecchiuti/Practica_JavaScrip.git"
+  },
+  "keywords": [
+    "enma123.."
+  ],
+  "author": "jose Recchiuti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrecchiuti/Practica_JavaScrip/issues"
+  },
+  "homepage": "https://github.com/jrecchiuti/Practica_JavaScrip#readme"
+}
