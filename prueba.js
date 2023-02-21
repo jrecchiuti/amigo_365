@@ -1,7 +1,7 @@
-let nombre = document.getElementById('nombre')
-let apellido = document.getElementById('apellido')
+let name = document.getElementById('nombre')
+let password = document.getElementById('clave')
 let edad =  document.getElementById('edad')
-let usuario = document.getElementById('usuario')
+let user = document.getElementById('usuario')
 let email = document.getElementById('email')
 let mayorEdad 
 let ahorro = document.getElementById('ingreso')
@@ -9,23 +9,30 @@ let deuda = document.getElementById('deuda')
 let montoReal
 let nombreCompleto
 
-/*nombre = prompt("ingrese su nombre")
-apellido = prompt( nombre +" ingrese su apellido")
-edad =  prompt(nombre + " ingrese su edad")
-usuario = prompt(nombre + " ingrese su usuario")
-email = prompt(nombre + " ingrese su email")
-deuda = prompt(nombre + " ingrese el monto de su deuda")
-ahorro = prompt(nombre + " ingrese el monto de sus ahorros")
-if (edad >= 18){
-    mayorEdad = true
+let users= []
+
+class Usuario
+{
+    constructor(name, user, password, email)
+    {
+        this.name=name
+        this.user= user
+        this.password= password
+        this.email= email
+
+    }
 }
-else{
-    mayorEdad = false
-}
-montoReal = ahorro - deuda
-nombreCompleto = nombre + " " + apellido
-console.log(nombreCompleto)*/
+
 function llenar()
 {
-    console.log("ingreso de boton " + nombre.value + " " + apellido.value)
+    users.push(new Usuario(name.value, user.value, password.value, email.value)) // manera de llenar un array con el objeto
+    reiniciarFormulario()
+    return
+}
+
+function reiniciarFormulario()
+{
+    let form= document.getElementById('Formulario')
+    form.reset()//es una de las formas para voler los campos vacios de un formulario 
+    return
 }

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>prueba JavaScrip</title>
-    <script src="./prueba.js"></script>
     <link rel="stylesheet" href="./Style.css">
 </head>
 <body>
@@ -16,36 +15,29 @@
                 <span>Ingrese sus nombre</span>
                 <input id="nombre" type="text" name="nombre">
             </label>
-            <label for="apellido">
-                <span>Ingrese sus apeliido</span>
-                <input type="text" name="apellido">
+            <label for="clave">
+                <span>Ingrese sus contraseña</span>
+                <input id="clave" type="text" name="clave">
             </label>
             <label for="email">
                 <span>Ingrese su email</span>
-                <input type="email" name="email" placeholder="ejemplo xxx@Gmail.com">
+                <input id="email" type="email" name="email" placeholder="ejemplo xxx@Gmail.com">
             </label>
             <label for="usuario">
                 <span>Ingrese su usuario platzi</span>
-                <input type="text" name="usuario">
+                <input id ="usuario"type="text" name="usuario">
             </label>
             <label for="edad">
                 <span>Ingrese su edad</span>
-                <input type="number" name="edad">
-            </label>
-            <label for="deuda">
-                <span>Ingrese sus deudas</span>
-                <input type="numer" name="deuda">
-            </label>
-            <label for="ingreso">
-                <span>Ingrese sus ahorros</span>
-                <input type="numer" name="ingreso" >
+                <input id ="edad"type="number" name="edad">
             </label>
             
             <div class="envia">
-                <button id = "enviar" onclick= llenar()>enviar</button>
+                <button id = "enviar" onclick= "llenar()" type="button">enviar</button> <!-- con le type button puedo eliminar la informacion en el link los valores -->
             </div>     
         </form>
           
     </main>
+    <script src="./prueba.js"></script>
 </body>
 </html>
