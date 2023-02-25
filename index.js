@@ -56,11 +56,49 @@ app.post("/create", (req, res) => {
       
   }
 }); /*permite recibir informacion del cliente para el servidor */
+app.post("/inicioSesion",(req,res)=>
+{
+  console.log(req.body)
+
+  let usuario = req.body.usuario
+  let contraseña = req.body.contraseña
+  let confirmacion = confirInicioSesion(usuario,contraseña,users)
+  if (confirmacion == 1)
+  {
+    console.log("usuario encontrado")
+    return res.json({message: "usuario encontrado"}).status(200).end()
+    // return res.informacionUsuario(usuario, users)
+  }
+  else
+  {
+    return res.json({message: "usuario o contraseña errado"}).status(400).end()
+  }
+
+})
+
 /*app.get("/creation", (req,res) => {
 
 
 }) esto permite dar respuesta de forma de lectura al cliente  */
-
+function informacionUsuario(usuario, users)
+{ let informacion= []
+  for (let i = 0; i < users.length; i++) {
+    if ((usuario == users[i].user) && (contraseña== users[i].password)) {
+        informacion.push(users)
+    }
+  }
+  return informacion
+}
+function confirInicioSesion(usuario,contraseña,users)
+{
+  let resultado = 0
+  for (let i = 0; i < users.length; i++) {
+    if ((usuario == users[i].user) && (contraseña== users[i].password)) {
+        resultado = 1;
+    }
+  }
+  return resultado
+}
 function confirmacionData(usuario, users) {
   let resultado = 0;
   if (
@@ -83,4 +121,4 @@ function confirmacionData(usuario, users) {
 }
 app.listen(8080, () => {
   console.log("servidor iniciado");
-}); /* asi se le da el piuerto por el cual se comunicara el servidor con le cliente */
+}); /* asi se le da el puerto por el cual se comunicara el servidor con le cliente */

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,45 +8,75 @@
     <title>prueba JavaScrip</title>
     <link rel="stylesheet" href="./Style.css">
 </head>
+
 <body>
+    <header>
+        <nav>
+            <ul class="optionPrincipal">
+                <li class="itemsPrincipal"><button class="registrar" onclick=registrarUsuario()>Registrar</button></li>
+                <li class="itemsPrincipal"><button class="ingresar" onclick=iniciarSesion()>Ingresar</button> </li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <h1>crear usuario</h1>
-        <form id="Formulario">        
-            <label for="nombre">
-                <span>Ingrese su nombre y apellido</span>
-                <input id="nombre" type="text" name="nombre">
-            </label>
-            <label for="email">
-                <span>Ingrese su email</span>
-                <input id="email" type="email" name="email" placeholder="ejemplo xxx@Gmail.com">
-            </label>
-            <label for="usuario">
-                <span>Ingrese su usuario</span>
-                <input id ="usuario"type="text" name="usuario">
-            </label>
-            <label for="clave">
-                <span>Ingrese sus contraseña</span>
-                <input id="clave" type="text" name="clave">
-            </label>
-            <label for="edad">
-                <span>Ingrese su edad</span>
-                <input id ="edad"type="number" name="edad">
-            </label>
-            <label for="direccion">
-                <span>Ingrese su direccion de domicilio</span>
-                <input id ="direccion"type="text" name="direccion">
-            </label>
-            <label for="premisologia">
-                <span>Ingrese si es profesor</span>
-                <input id ="permisologia"type="text" name="permisologia">
-            </label>
-            
-            <div class="envia">
-                <button id = "enviar" onclick= "llenar()" type="button">enviar</button> <!-- con le type button puedo eliminar la informacion en el link los valores -->
-            </div>     
-        </form>
-          
+        <div id="contenedor" style="display: none;">
+            <div id="registroUsuario">
+                <h1 class="title">crear usuario</h1>
+                <form id="Formulario">
+                    <label for="nombre">
+                        <span>Ingrese su nombre y apellido</span>
+                        <input id="nombre" type="text" name="nombre">
+                    </label>
+                    <label for="email">
+                        <span>Ingrese su email</span>
+                        <input id="email" type="email" name="email" placeholder="ejemplo xxx@Gmail.com">
+                    </label>
+                    <label for="usuario">
+                        <span>Ingrese su usuario</span>
+                        <input id="usuario" type="text" name="usuario">
+                    </label>
+                    <label for="clave">
+                        <span>Ingrese sus contraseña</span>
+                        <input id="clave" type="text" name="clave">
+                    </label>
+                    <label for="edad">
+                        <span>Ingrese su edad</span>
+                        <input id="edad" type="number" name="edad">
+                    </label>
+                    <label for="direccion">
+                        <span>Ingrese su direccion de domicilio</span>
+                        <input id="direccion" type="text" name="direccion">
+                    </label>
+                    <label for="premisologia">
+                        <span>Ingrese si es profesor</span>
+                        <input id="permisologia" type="text" name="permisologia">
+                    </label>
+
+                    <div class="envia">
+                        <button id="enviar" onclick="llenar()" type="button">enviar</button>
+                        <!-- con le type button puedo eliminar la informacion en el link los valores -->
+                    </div>
+                </form>
+            </div>
+            <div id="inicioSesion">
+                <h2 class="title">Inicio de Sesiòn</h2>
+                <label for="usuario1">
+                    <span>Usuario</span>
+                    <input id="usuario1" type="text" name="usuario1">
+                </label>
+                <label for="contraseña">
+                    <span>Contraseña</span>
+                    <input id="contraseña" type="email" name="contraseña">
+                </label>
+                <div class="iniciar">
+                    <button id="iniciar" onclick="iniciar()" type="button">iniciar</button>
+                    <!-- con le type button puedo eliminar la informacion en el link los valores -->
+                </div>
+                </form>
+            </div>
+        </div>
     </main>
     <script src="./prueba.js"></script>
 </body>
+
 </html>

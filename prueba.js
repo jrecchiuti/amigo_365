@@ -5,8 +5,9 @@ let user = document.getElementById("usuario");
 let email = document.getElementById("email");
 let permisologia = document.getElementById("permisologia");
 let  direccion = document.getElementById("direccion");
-
-
+let registroUsuario = document.getElementById("registroUsuario")
+let inicioSesion = document.getElementById("inicioSesion")
+let contenedor= document.getElementById("contenedor")
 let users = [];
 
 class Usuario {
@@ -22,7 +23,39 @@ class Usuario {
         this.id= id
     }
 }
-
+//inicio principal de registro
+function pantallaPrincipal()
+{
+  contenedor.style.display = 'flex'
+  registroUsuario.style.display = 'none'
+  inicioSesion.style.display = 'none'
+}
+function registrarUsuario()
+{
+  contenedor.style.display = 'flex'
+  registroUsuario.style.display = 'flex'
+  inicioSesion.style.display = 'none'
+}
+function iniciarSesion()
+{
+  contenedor.style.display = 'flex'
+  registroUsuario.style.display = "none"
+  inicioSesion.style.display = 'flex'
+}
+function iniciar()
+{
+  let usuario = document.getElementById("usuario1").value
+  let contraseña = document.getElementById("contraseña").value
+  if (usuario != "" && contraseña != "")
+  {
+    sendInicioDataServer(usuario,contraseña)
+  }
+  else
+  {
+    console.log("usuario o contraseña sin informacion")
+  }
+}
+//-----------------------------------------------------//
 function llenar() {
   let usuario = new Usuario(
     name.value,
@@ -37,6 +70,7 @@ function llenar() {
   console.log(users);
   sendDataServer(usuario);
   reiniciarFormulario();
+  //pantallaPrincipal();
   return;
 }
 
@@ -44,6 +78,23 @@ function sendDataServer(usuario) {
   fetch("http://localhost:8080/create", {
     method: "POST",
     body: JSON.stringify(usuario),
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+  }).then(function (res) {
+    if (res.ok) {
+      res.text().then(function (respuesta) {
+        console.log(respuesta);
+      });
+    }
+  });
+}
+function sendInicioDataServer(usuario,contraseña)
+{
+  fetch("http://localhost:8080/inicioSesion", {
+    method: "POST",
+    body: JSON.stringify({usuario,contraseña}),
     headers: {
       "Content-Type": "application/json",
       // 'Content-Type': 'application/x-www-form-urlencoded',
