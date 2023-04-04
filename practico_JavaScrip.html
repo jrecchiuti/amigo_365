@@ -11,17 +11,32 @@
 
 <body>
     <header>
-        <nav>
-            <ul class="optionPrincipal">
-                <li class="itemsPrincipal"><button class="registrar" onclick=registrarUsuario()>Registrar</button></li>
-                <li class="itemsPrincipal"><button class="ingresar" onclick=iniciarSesion()>Ingresar</button> </li>
-            </ul>
-        </nav>
+        <div id="contenedorHeader1">
+            <img class="logoPrincipal"src="./img/logo.jpg" alt="">
+            <h1 class="TituloPrincipal">Grupo amigo 360</h1>
+            
+            <nav>
+                <ul class="optionPrincipal">
+                    <li class="itemsPrincipal"><button id="registrar" >Registrar</button></li>
+                    <li class="itemsPrincipal"><button id="ingresar" onclick="iniciarSesion()">Ingresar</button> </li>
+                </ul>
+            </nav>
+        </div>
+        <div id="contenedorHeader2">
+            <nav>
+                <ul class="menuPrincipal">
+                    <li class="itemsMenuPrincipal"><button id="buttonMenuPrincipal" class="quienesSomos">Quienes somos</button></li>
+                    <li class="itemsMenuPrincipal"><button id="buttonMenuPrincipal" class="planesYServicios">Planes y servicios</button> </li>
+                    <li class="itemsMenuPrincipal"><button id="buttonMenuPrincipal" class="marketingPlace">marketing Place</button></li>
+                    <li class="itemsMenuPrincipal"><button id="buttonMenuPrincipal" class="contactenos">contactenos</button> </li>
+                </ul>
+            </nav>
+        </div> 
     </header>
     <main>
-        <div id="contenedor" style="display: none;">
+        <div id="contenedor" style="display: none;"><!-- se debe siempre meter todo en contenedores--> 
             <div id="registroUsuario">
-                <h1 class="title">crear usuario</h1>
+                <h2 class="title">crear usuario</h2>
                 <form id="Formulario">
                     <label for="nombre">
                         <span>Ingrese su nombre y apellido</span>
@@ -39,37 +54,52 @@
                         <span>Ingrese sus contraseña</span>
                         <input id="clave" type="text" name="clave">
                     </label>
-                    <label for="edad">
-                        <span>Ingrese su edad</span>
-                        <input id="edad" type="number" name="edad">
+                    <label for="telefono">
+                        <span>telefono de contacto</span>
+                        <input id="telefono" type="number" name="telefono">
                     </label>
                     <label for="direccion">
                         <span>Ingrese su direccion de domicilio</span>
                         <input id="direccion" type="text" name="direccion">
                     </label>
-                    <label for="premisologia">
-                        <span>Ingrese si es profesor</span>
-                        <input id="permisologia" type="text" name="permisologia">
+                    <label for="vehicle_brand">
+                        <span>marca del vehiculo</span>
+                        <input id="vehicle_brand" type="text" >
                     </label>
-
+                    <label for="vehicle_model">
+                        <span>modelo del vehiculo</span>
+                        <input id="vehicle_model" type="text" >
+                    </label>
+                    <label for="plate">
+                        <span>placa del vehiculo </span>
+                        <input id="plate" type="text" >
+                    </label>
+                    <label for="color">
+                        <span>color del vehiculo</span>
+                        <input id="color" type="text" >
+                    </label>
+                    <label for="years">
+                        <span>año del vehiculo</span>
+                        <input id="years" type="text" >
+                    </label>
                     <div class="envia">
-                        <button id="enviar" onclick="llenar()" type="button">enviar</button>
+                        <button id="enviar" type="button" onclick="llenar()">enviar</button>
                         <!-- con le type button puedo eliminar la informacion en el link los valores -->
                     </div>
                 </form>
             </div>
             <div id="inicioSesion">
-                <h2 class="title">Inicio de Sesiòn</h2>
+                <h2 class="titleSesion">Inicio de Sesiòn</h2>
                 <label for="usuario1">
-                    <span>Usuario</span>
+                    <span>Usuario:</span>
                     <input id="usuario1" type="text" name="usuario1">
                 </label>
                 <label for="contraseña">
-                    <span>Contraseña</span>
-                    <input id="contraseña" type="email" name="contraseña">
+                    <span>Contraseña:</span>
+                    <input id="contraseña" type="text" name="contraseña">
                 </label>
                 <div class="iniciar">
-                    <button id="iniciar" onclick="iniciar()" type="button">iniciar</button>
+                    <button id="iniciar" type="button" onclick="iniciar()">iniciar</button>
                     <!-- con le type button puedo eliminar la informacion en el link los valores -->
                 </div>
                 </form>

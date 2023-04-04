@@ -1,3 +1,4 @@
+/*-----------formularios------------------------------*/
 let name = document.getElementById("nombre");
 let password = document.getElementById("clave");
 let edad = document.getElementById("edad");
@@ -8,27 +9,45 @@ let  direccion = document.getElementById("direccion");
 let registroUsuario = document.getElementById("registroUsuario")
 let inicioSesion = document.getElementById("inicioSesion")
 let contenedor= document.getElementById("contenedor")
+let vehicle_brand = document.getElementById("vehicle_brand")
+let vehicle_model = document.getElementById("vehicle_model")
+let plate = document.getElementById("plate")
+let color = document.getElementById("color")
+let years = document.getElementById("years")
+/*------ los botones-------------------*/
+let registrar = document.getElementById("registrar")
+let ingresar = document.getElementById("ingresar")
+let enviar = document.getElementById("enviar")
+let iniciar1= document.getElementById("iniciar")
+/*-------array--------------------------*/
 let users = [];
 
 class Usuario {
-    constructor(name, email, user, password , age, direction, permissions, id)
+    constructor(name, email, user, password , phone, direction,vehicle_brand,vehicle_model,plate,color,years, permissions,id)
     {
         this.name=name
         this.email= email
         this.user= user
         this.password= password
-        this.age = age
+        this.phone = phone
         this.direction= direction
+        this.vehicle_brand = vehicle_brand
+        this.vehicle_model =vehicle_model
+        this.plate = plate
+        this.color = color
+        this.years = years
         this.permissions= permissions
         this.id= id
     }
 }
 //inicio principal de registro
+registrar.addEventListener('click', registrarUsuario)
 function pantallaPrincipal()
 {
   contenedor.style.display = 'flex'
   registroUsuario.style.display = 'none'
   inicioSesion.style.display = 'none'
+
 }
 function registrarUsuario()
 {
@@ -62,9 +81,13 @@ function llenar() {
     email.value,
     user.value,
     password.value,
-    edad.value,
+    telefono.value,
     direccion.value,
-    permisologia.value,
+    vehicle_brand.value,
+    vehicle_model.value,
+    plate.value,
+    color.value,
+    years.value,
   );
   users.push(usuario); // manera de llenar un array con el objeto
   console.log(users);
