@@ -8,15 +8,21 @@ app.use(express.json());
 let users = [];
 
 class User {
-  constructor(name, email, user, password, age, direction, permissions, id) {
-    this.name = name;
-    this.email = email;
-    this.user = user;
-    this.password = password;
-    this.age = age;
-    this.direction = direction;
-    this.permissions = permissions;
-    this.id = id;
+  constructor(name, email, user, password , phone, direction,vehicle_brand,vehicle_model,plate,color,years, permissions,id)
+  {
+    this.name=name
+    this.email= email
+    this.user= user
+    this.password= password
+    this.phone = phone
+    this.direction= direction
+    this.vehicle_brand = vehicle_brand
+    this.vehicle_model = vehicle_model
+    this.plate = plate
+    this.color = color
+    this.years = years
+    this.permissions= permissions
+    this.id= id
   }
 }
 
@@ -32,9 +38,15 @@ app.post("/create", (req, res) => {
       req.body.email,
       req.body.user,
       req.body.password,
-      req.body.age,
+      req.body.phone,
       req.body.direction,
+      req.body.vehicle_brand,
+      req.body.vehicle_model,
+      req.body.plate,
+      req.body.color,
+      req.body,years,
       req.body.permissions,
+      req.body.id,
       ident
     );
     users.push(user);

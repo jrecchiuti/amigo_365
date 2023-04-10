@@ -42,6 +42,7 @@ class Usuario {
 }
 //inicio principal de registro
 registrar.addEventListener('click', registrarUsuario)
+ingresar.addEventListener('click',iniciarSesion)
 function pantallaPrincipal()
 {
   contenedor.style.display = 'flex'
